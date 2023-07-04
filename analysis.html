@@ -69,40 +69,58 @@ ul.task-list li input[type="checkbox"] {
 
 <div class="cell">
 <div class="cell-output cell-output-stdout">
-<pre><code>     survey        gender               age            race          
- Min.   :2009   Length:10000       Min.   : 0.00   Length:10000      
- 1st Qu.:2009   Class :character   1st Qu.:17.00   Class :character  
- Median :2010   Mode  :character   Median :36.00   Mode  :character  
- Mean   :2010                      Mean   :36.74                     
- 3rd Qu.:2011                      3rd Qu.:54.00                     
- Max.   :2011                      Max.   :80.00                     
-                                                                     
-         education          hh_income        weight           height     
- Middle School:1339   more 99999 :2220   Min.   :  2.80   Min.   : 83.6  
- College      :2098   75000-99999:1084   1st Qu.: 56.10   1st Qu.:156.8  
- High School  :1517   25000-34999: 958   Median : 72.70   Median :166.0  
- Some College :2267   35000-44999: 863   Mean   : 70.98   Mean   :161.9  
- NA's         :2779   45000-54999: 784   3rd Qu.: 88.90   3rd Qu.:174.5  
-                      (Other)    :3280   Max.   :230.70   Max.   :200.4  
-                      NA's       : 811   NA's   :78       NA's   :353    
-      bmi            pulse           diabetes       general_health 
- Min.   :12.88   Min.   : 40.00   Min.   :0.00000   Min.   :1.000  
- 1st Qu.:21.58   1st Qu.: 64.00   1st Qu.:0.00000   1st Qu.:3.000  
- Median :25.98   Median : 72.00   Median :0.00000   Median :3.000  
- Mean   :26.66   Mean   : 73.56   Mean   :0.07709   Mean   :3.382  
- 3rd Qu.:30.89   3rd Qu.: 82.00   3rd Qu.:0.00000   3rd Qu.:4.000  
- Max.   :81.25   Max.   :136.00   Max.   :1.00000   Max.   :5.000  
- NA's   :366     NA's   :1437     NA's   :142       NA's   :2461   
-   depressed     pregnancies         sleep       
- None   :5246   Min.   : 1.000   Min.   : 2.000  
- Several:1009   1st Qu.: 2.000   1st Qu.: 6.000  
- Most   : 418   Median : 3.000   Median : 7.000  
- NA's   :3327   Mean   : 3.027   Mean   : 6.928  
-                3rd Qu.: 4.000   3rd Qu.: 8.000  
-                Max.   :32.000   Max.   :12.000  
-                NA's   :7396     NA's   :2245    </code></pre>
+<pre><code>     pulse           gender         
+ Min.   : 40.00   Length:4308       
+ 1st Qu.: 68.00   Class :character  
+ Median : 74.00   Mode  :character  
+ Mean   : 75.43                     
+ 3rd Qu.: 82.00                     
+ Max.   :134.00                     </code></pre>
 </div>
 </div>
+<p>What is the difference in pulse rate between two randomly selected female students in this class?</p>
+<p>Preceptor Table is a table of data with rows and columns such that, if there is no missing data, it is easy to estimate the quantity of interest.</p>
+<p>Wisdom is the first Cardinal Virtue in data science. Begin with the quantity of interest. Is that QoI a causal effect or simply a forecast? What Preceptor Table would allow you to calculate your QoI easily? Perform an exploratory data analysis (EDA) on the data you have. Is it valid to consider the data you have and the (theoretical) data from the Preceptor Table to have arisen out of the same population? If so, you may continue. If not, your attempt to estimate your QoI ends now.</p>
+<p>Validity is the consistency, or lack there of, in the columns of our dataset and the corresponding columns in our Preceptor Table. In order to consider the two datasets to be drawn from the same population, the columns from one must be have a valid correspondence with the columns in the other. Validity, if true (or at least reasonable), allows us to construct the Population Table.</p>
+<p><strong>The outcome in your Preceptor Table is not the same thing as the answer to your question.</strong></p>
+<section id="wisdom" class="level2">
+<h2 class="anchored" data-anchor-id="wisdom">Wisdom</h2>
+<p>predictive or causal units outcome covariates treatment Preceptor Table validity</p>
+<p>One reason why validity fails.</p>
+<p>Population Table</p>
+</section>
+<section id="justice" class="level2">
+<h2 class="anchored" data-anchor-id="justice">Justice</h2>
+<p>Stability Representativeness Unconfoundedness</p>
+<p>formula</p>
+</section>
+<section id="courage" class="level2">
+<h2 class="anchored" data-anchor-id="courage">Courage</h2>
+<p>Estimate a model:</p>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>stan_glm
+ family:       gaussian [identity]
+ formula:      pulse ~ 1
+ observations: 4308
+ predictors:   1
+------
+            Median MAD_SD
+(Intercept) 75.4    0.2  
+
+Auxiliary parameter(s):
+      Median MAD_SD
+sigma 11.9    0.1  
+
+------
+* For help interpreting the printed output see ?print.stanreg
+* For info on the priors used see ?prior_summary.stanreg</code></pre>
+</div>
+</div>
+</section>
+<section id="temperance" class="level2">
+<h2 class="anchored" data-anchor-id="temperance">Temperance</h2>
+</section>
 
 </main>
 <!-- /main column -->
