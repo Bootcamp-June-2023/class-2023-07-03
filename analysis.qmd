@@ -1,0 +1,50 @@
+---
+title: "Pulse Rates"
+author: "David Kane"
+format: html
+execute: 
+  echo: false
+---
+
+```{r}
+#| message: false
+library(tidyverse)
+library(primer.data)
+```
+
+
+```{r}
+x <- nhanes |> 
+  select(pulse, gender) |> 
+  drop_na() |> 
+  filter(gender == "Female")
+```
+
+
+```{r}
+summary(x)
+```
+
+Wisdom
+
+preditive or causal
+units
+outcome
+covariates
+treatment
+Preceptor Table
+validity
+
+One reason why validity fails.
+
+Population Table
+
+Justice
+
+
+Courage
+
+
+Temperance
+
+
